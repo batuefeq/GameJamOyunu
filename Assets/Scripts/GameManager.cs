@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameObject bullet;
+    public static GameObject bullet, enemy;
+
+
 
     [SerializeField]
-    private GameObject _bullet;
+    private GameObject _bullet, _enemy;
 
 
 
     private void Awake()
     {
         bullet = _bullet;
+        enemy = _enemy;
     }
 
 }

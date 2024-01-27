@@ -11,9 +11,11 @@ public class Player : MonoBehaviour
     public static float bulletSpeed = 10f;
 
     private Rigidbody2D rb;
-
     private bool isGrounded;
-   
+
+    private float ySpeedConstraint = 15f;
+
+
     public enum RotatedSide
     {
         right,
@@ -32,8 +34,8 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         health = 5;
         damage = 1;
-        speed = 50f;
-        jumpSpeed = 5f;
+        speed = 10f;
+        jumpSpeed = 10f;
     }
 
 
@@ -44,6 +46,14 @@ public class Player : MonoBehaviour
         rb.velocity = new Vector2(x_input * speed, rb.velocity.y);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("HeadCollider"))
+        {
+            collision.GetComponentInParent<Enemy>().health -= damage;
+
+        }
+    }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
@@ -84,12 +94,19 @@ public class Player : MonoBehaviour
         {
             if (isGrounded)
             {
-                print("inside");
                 rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
             }
         }
     }
 
+
+    private void ConstraintLooker()
+    {
+        if (rb.velocity.y > ySpeedConstraint)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, ySpeedConstraint);
+        }
+    }
 
     private void Firing()
     {
@@ -108,6 +125,8 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        print("Player health: " + health.ToString());
+        ConstraintLooker();
         Movement();
         Jump();
         Firing();
