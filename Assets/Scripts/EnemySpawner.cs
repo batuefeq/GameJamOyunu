@@ -6,8 +6,8 @@ using Random = UnityEngine.Random;
 
 public class EnemySpawner : MonoBehaviour
 {
-    private float spawnRate;
-    private float time;
+    private float spawnRate = 2f;
+    private float time = 0f;
 
     public GameObject spawnLocationR, spawnLocationL;
     List<Vector3> locationLists = new();
@@ -25,6 +25,7 @@ public class EnemySpawner : MonoBehaviour
         if (time >= spawnRate)
         {
             Spawn();
+            time = 0f;
         }
     }
 
@@ -39,7 +40,8 @@ public class EnemySpawner : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.K))
         {
-            Spawner();
+            Spawn();
         }
+        Spawner();
     }
 }
