@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     public static float bulletSpeed = 10f;
 
     private Rigidbody2D rb;
-    private bool isGrounded;
+    public static bool isGrounded;
 
     private float ySpeedConstraint = 15f;
 
@@ -46,12 +46,16 @@ public class Player : MonoBehaviour
         rb.velocity = new Vector2(x_input * speed, rb.velocity.y);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    
+    private void OnCollisionEnter2D(Collision2D col)
     {
-        if(collision.gameObject.CompareTag("HeadCollider"))
+        if (col.collider.gameObject.CompareTag("HeadCollider"))
         {
-            collision.GetComponentInParent<Enemy>().health -= damage;
-
+            print("inside");
+        }
+        else if (col.collider.gameObject.CompareTag("Enemy"))
+        {
+            health -= col.gameObject.GetComponent<Enemy>().damage;
         }
     }
 
