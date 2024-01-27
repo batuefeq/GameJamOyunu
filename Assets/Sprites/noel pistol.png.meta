@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 59171549168881b468b72686c2a1c541
+guid: e483cf4acce00df47aac0e6ead52c55f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: noel baba attack_0
+      name: noel pistol_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 35
-        height: 35
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 979ee2f4ccd6d4c4e85e99c7ce7f4b61
-      internalID: 747332851
+      spriteID: a3fbdcb90273e3c4684aacb7dafbd177
+      internalID: 2007636881
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: noel baba attack_1
+      name: noel pistol_1
       rect:
         serializedVersion: 2
-        x: 35
+        x: 32
         y: 0
-        width: 35
-        height: 35
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 546602aa90ea5cd4f8c04122b56db35b
-      internalID: 976573280
+      spriteID: e181c6965d3b8fb43b76452eeadd1690
+      internalID: -946300518
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: noel baba attack_2
+      name: noel pistol_2
       rect:
         serializedVersion: 2
-        x: 70
+        x: 64
         y: 0
-        width: 35
-        height: 35
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f32151c814d3aa54e98931db7155dc59
-      internalID: 1698530515
+      spriteID: 0b39e8139be3d79498a351f9854cfcd0
+      internalID: 1789516756
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: noel baba attack_3
+      name: noel pistol_3
       rect:
         serializedVersion: 2
-        x: 105
+        x: 96
         y: 0
-        width: 35
-        height: 35
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,71 +182,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 20c940156867d8e46907b5722bd015d5
-      internalID: 1533494912
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: noel baba attack_4
-      rect:
-        serializedVersion: 2
-        x: 140
-        y: 0
-        width: 35
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2dc60dada4eb52d4a9835889ba629ee3
-      internalID: -1924946151
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: noel baba attack_5
-      rect:
-        serializedVersion: 2
-        x: 175
-        y: 0
-        width: 35
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9a3abcab019eb4d47bd5520f19a22a84
-      internalID: 557428335
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: noel baba attack_6
-      rect:
-        serializedVersion: 2
-        x: 210
-        y: 0
-        width: 35
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f2456482c8e473c4b9038c5153a3c2ec
-      internalID: -1361616531
+      spriteID: 4c06a5aabd7c3c74f80fe2f1c8c03b76
+      internalID: 1994730480
       vertices: []
       indices: 
       edges: []
@@ -262,13 +199,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      noel baba attack_0: 747332851
-      noel baba attack_1: 976573280
-      noel baba attack_2: 1698530515
-      noel baba attack_3: 1533494912
-      noel baba attack_4: -1924946151
-      noel baba attack_5: 557428335
-      noel baba attack_6: -1361616531
+      noel pistol_0: 2007636881
+      noel pistol_1: -946300518
+      noel pistol_2: 1789516756
+      noel pistol_3: 1994730480
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

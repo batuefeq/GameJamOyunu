@@ -23,6 +23,16 @@ public class Player : MonoBehaviour
     }
     public RotatedSide side; // hangi tarafa bakýyor karakter
 
+    public enum PlayerAction
+    {
+        idle,
+        swing,
+        parry,
+        fire
+    }
+
+    public PlayerAction action;
+
     public static Player playerInstance;
     private float pushForce = 100f;
 

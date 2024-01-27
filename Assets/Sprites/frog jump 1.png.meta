@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 59171549168881b468b72686c2a1c541
+guid: 9e31ec90358a04d448676120b935621a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: noel baba attack_0
+      name: frog jump 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 35
-        height: 35
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 979ee2f4ccd6d4c4e85e99c7ce7f4b61
-      internalID: 747332851
+      spriteID: 93720631dc5c0b149b9bc5214ab185ca
+      internalID: -1789939367
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: noel baba attack_1
+      name: frog jump 1_1
       rect:
         serializedVersion: 2
-        x: 35
+        x: 32
         y: 0
-        width: 35
-        height: 35
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,113 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 546602aa90ea5cd4f8c04122b56db35b
-      internalID: 976573280
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: noel baba attack_2
-      rect:
-        serializedVersion: 2
-        x: 70
-        y: 0
-        width: 35
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f32151c814d3aa54e98931db7155dc59
-      internalID: 1698530515
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: noel baba attack_3
-      rect:
-        serializedVersion: 2
-        x: 105
-        y: 0
-        width: 35
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 20c940156867d8e46907b5722bd015d5
-      internalID: 1533494912
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: noel baba attack_4
-      rect:
-        serializedVersion: 2
-        x: 140
-        y: 0
-        width: 35
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2dc60dada4eb52d4a9835889ba629ee3
-      internalID: -1924946151
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: noel baba attack_5
-      rect:
-        serializedVersion: 2
-        x: 175
-        y: 0
-        width: 35
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9a3abcab019eb4d47bd5520f19a22a84
-      internalID: 557428335
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: noel baba attack_6
-      rect:
-        serializedVersion: 2
-        x: 210
-        y: 0
-        width: 35
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f2456482c8e473c4b9038c5153a3c2ec
-      internalID: -1361616531
+      spriteID: 85e6045111821bf4b8add5b2d354eea3
+      internalID: -355580165
       vertices: []
       indices: 
       edges: []
@@ -262,13 +157,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      noel baba attack_0: 747332851
-      noel baba attack_1: 976573280
-      noel baba attack_2: 1698530515
-      noel baba attack_3: 1533494912
-      noel baba attack_4: -1924946151
-      noel baba attack_5: 557428335
-      noel baba attack_6: -1361616531
+      frog jump 1_0: -1789939367
+      frog jump 1_1: -355580165
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

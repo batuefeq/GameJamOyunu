@@ -10,12 +10,15 @@ public class DeerCall : MonoBehaviour
     private float jetpackDuration = 2f;
 
 
+    private float timeTaker = 1f;
+
 
     private void ActivateJumpPack()
     {
         if (Input.GetKey(KeyCode.E) && !isJetpackActive && jetpackDuration > 0.2f)
         {
             isJetpackActive = true;
+            timeTaker = 1f;
         }
         if (Input.GetKeyUp(KeyCode.E))
         {
@@ -39,9 +42,13 @@ public class DeerCall : MonoBehaviour
 
     private void DeactiveJetpackHandler()
     {
-        if (!isJetpackActive && jetpackDuration <= 2f)
+        if (!isJetpackActive && jetpackDuration <= 2f && timeTaker < 0)
         {
             jetpackDuration += Time.deltaTime;
+        }
+        if (timeTaker > 0)
+        {
+            timeTaker -= Time.deltaTime;
         }
     }
 

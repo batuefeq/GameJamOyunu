@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FireHandler : MonoBehaviour
 {
-    private static float timer = 0;
+    public static float timer = 0;
     private static float timerMag = 0;
     public static float shootRate = 0.5f;
     public static int magSize = 7;
@@ -16,20 +16,14 @@ public class FireHandler : MonoBehaviour
     public static void FireBullet(Vector3 pos, float speed)
     {
         if (!Timer() || reloading) return;
-        GameObject bullet = Instantiate(GameManager.bullet, pos, Quaternion.identity);
+        int rand = Random.Range(0, GameManager.bullets.Count);
+        GameObject bullet = Instantiate(GameManager.bullets[rand], pos, Quaternion.identity);
         currentMag--;
         bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(speed, 0f);
         Destroy(bullet, 2f);
     }
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-
-        }
-    }
 
 
     private void Update()
@@ -44,7 +38,6 @@ public class FireHandler : MonoBehaviour
         if (currentMag == 0)
         {
             timerMag += Time.deltaTime;
-            print("reloading");
             reloading = true;
             
         }
@@ -53,7 +46,6 @@ public class FireHandler : MonoBehaviour
             timerMag = 0;
             currentMag = magSize;
             reloading = false;
-            print("reloaded");
         }
     }
 
@@ -62,6 +54,7 @@ public class FireHandler : MonoBehaviour
     {  
         if (timer >= shootRate)
         {
+            
             timer = 0f;
             return true;
         }

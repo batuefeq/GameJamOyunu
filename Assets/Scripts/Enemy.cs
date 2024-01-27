@@ -11,6 +11,15 @@ public class Enemy : MonoBehaviour
 
     private bool reachedR, reachedL;
     private bool seek = true;
+
+
+    public enum RotatedSide
+    {
+        right,
+        left
+    }
+    public RotatedSide side; 
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -29,6 +38,18 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    private void Rotater()
+    {
+        if (rb.velocity.x > 0)
+        {
+            GetComponentInChildren<SpriteRenderer>().flipX = true;
+        }
+        else if (rb.velocity.x < 0)
+        {
+            GetComponentInChildren<SpriteRenderer>().flipX = false;
+        }
+    }
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -38,11 +59,26 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            if (!isGrounded)
+            {
+                isGrounded = true;
+            }
+        }
+    }
+
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             seek = true;
+        }
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = false;
         }
     }
 
@@ -55,14 +91,47 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void WalkingEnemy()
+
+    private float timer = 1.2f;
+    private float jumpSpeed = 10f;
+    private float xSpeed = 3f;
+
+    private void JumperEnemy()
     {
-        
+        if (timer > 0)
+        {
+            timer -= Time.deltaTime;       
+        }
+
+        if (timer < 0)
+        {
+            timer = 1.2f;
+            Jump();
+        }
     }
+
+    private void Jump()
+    {
+        rb.velocity = new Vector2((Player.playerInstance.gameObject.transform.position - transform.position).normalized.x * xSpeed, jumpSpeed);
+        Rotater();
+    }
+
+    private float flyTimer = 1f;
+    public bool isGrounded;
 
     private void FlyingEnemyAI() // UÇAN DÜÞMANLARIN AI
     {
-        EnemyMoveWithY(Player.playerInstance.gameObject.transform.position);
+        if (flyTimer > 0)
+        {
+            flyTimer -= Time.deltaTime;
+        }
+
+        if (flyTimer < 0)
+        {
+            flyTimer = 1.5f;
+            EnemyMoveWithY(Player.playerInstance.gameObject.transform.position);
+        }
+    
     }
 
 
@@ -82,7 +151,7 @@ public class Enemy : MonoBehaviour
         }
         else if (transform.GetChild(0).gameObject.CompareTag("JumperEnemy"))
         {
-
+            JumperEnemy();
         }
     }
 
@@ -123,15 +192,16 @@ public class Enemy : MonoBehaviour
         }        
     }
 
-    private void JumperEnemy()
-    {
-        
-    }
 
 
     void Update()
     {
         DeathChecker();
+        if (!gameObject.CompareTag("JumperEnemy"))         
+        {
+            Rotater();
+        }
+     
         MoveWithTag();
     }
 }

@@ -38,8 +38,9 @@ public class EnemySpawner : MonoBehaviour
     private void Spawn()
     {
         int rand = Random.Range(0, 2);
+        int randomEnemy = Random.Range(0, GameManager.enemyList.Count);
 
-        Instantiate(GameManager.enemy, locationLists[rand], Quaternion.identity);
+        Instantiate(GameManager.enemyList[randomEnemy], locationLists[rand], Quaternion.identity);
     }
 
     void Update()

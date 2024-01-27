@@ -21,6 +21,15 @@ public class SpriteAnimation : MonoBehaviour
         {
             anim.SetBool("isMoving", false);
         }
+
+        if (Player.playerInstance.action == Player.PlayerAction.swing)
+        {
+            anim.SetBool("isAttacking", true);
+        }
+        else
+        {
+            anim.SetBool("isAttacking", false);
+        }
     }
 
 

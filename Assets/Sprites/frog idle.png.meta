@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 59171549168881b468b72686c2a1c541
+guid: 4e221eb05a53fe3429aba90ee5dc9f4d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: noel baba attack_0
+      name: frog idle_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 35
-        height: 35
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 979ee2f4ccd6d4c4e85e99c7ce7f4b61
-      internalID: 747332851
+      spriteID: f5cf4586c848316429ce65ff807bf6c5
+      internalID: 706666437
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: noel baba attack_1
+      name: frog idle_1
       rect:
         serializedVersion: 2
-        x: 35
+        x: 32
         y: 0
-        width: 35
-        height: 35
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 546602aa90ea5cd4f8c04122b56db35b
-      internalID: 976573280
+      spriteID: d653e96f73db9804e896b2fb127467a6
+      internalID: 389646761
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: noel baba attack_2
+      name: frog idle_2
       rect:
         serializedVersion: 2
-        x: 70
+        x: 64
         y: 0
-        width: 35
-        height: 35
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f32151c814d3aa54e98931db7155dc59
-      internalID: 1698530515
+      spriteID: 7cb628b2c0c8e6f44a0c639300a761b5
+      internalID: 55246019
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: noel baba attack_3
+      name: frog idle_3
       rect:
         serializedVersion: 2
-        x: 105
+        x: 96
         y: 0
-        width: 35
-        height: 35
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,71 +182,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 20c940156867d8e46907b5722bd015d5
-      internalID: 1533494912
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: noel baba attack_4
-      rect:
-        serializedVersion: 2
-        x: 140
-        y: 0
-        width: 35
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2dc60dada4eb52d4a9835889ba629ee3
-      internalID: -1924946151
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: noel baba attack_5
-      rect:
-        serializedVersion: 2
-        x: 175
-        y: 0
-        width: 35
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9a3abcab019eb4d47bd5520f19a22a84
-      internalID: 557428335
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: noel baba attack_6
-      rect:
-        serializedVersion: 2
-        x: 210
-        y: 0
-        width: 35
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f2456482c8e473c4b9038c5153a3c2ec
-      internalID: -1361616531
+      spriteID: 0fa5908dba3c98f429f4cdaedf2fc6f0
+      internalID: 867602708
       vertices: []
       indices: 
       edges: []
@@ -262,13 +199,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      noel baba attack_0: 747332851
-      noel baba attack_1: 976573280
-      noel baba attack_2: 1698530515
-      noel baba attack_3: 1533494912
-      noel baba attack_4: -1924946151
-      noel baba attack_5: 557428335
-      noel baba attack_6: -1361616531
+      frog idle_0: 706666437
+      frog idle_1: 389646761
+      frog idle_2: 55246019
+      frog idle_3: 867602708
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
