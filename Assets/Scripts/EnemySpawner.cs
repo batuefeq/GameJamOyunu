@@ -8,12 +8,18 @@ public class EnemySpawner : MonoBehaviour
 {
     private float spawnRate = 2f;
     private float time = 0f;
+    public static EnemySpawner enemySpawner;
 
     public GameObject spawnLocationR, spawnLocationL;
     List<Vector3> locationLists = new();
 
-    void Start()
+    void Awake()
     {
+        if (enemySpawner == null)
+        {
+            enemySpawner = this;
+        }
+
         locationLists.Add(spawnLocationL.transform.position);
         locationLists.Add(spawnLocationR.transform.position);
     }
