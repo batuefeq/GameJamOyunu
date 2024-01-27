@@ -15,8 +15,9 @@ public class FireHandler : MonoBehaviour
 
     public static void FireBullet(Vector3 pos, float speed)
     {
-        if (!Timer() || reloading) return;
+        if (!Timer() || reloading || Player.playerInstance.action != Player.PlayerAction.idle) return;
         int rand = Random.Range(0, GameManager.bullets.Count);
+        SpriteAnimation.FireTrigger();
         GameObject bullet = Instantiate(GameManager.bullets[rand], pos, Quaternion.identity);
         currentMag--;
         bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(speed, 0f);

@@ -28,7 +28,6 @@ public class Player : MonoBehaviour
         idle,
         swing,
         parry,
-        fire
     }
 
     public PlayerAction action;
@@ -131,7 +130,7 @@ public class Player : MonoBehaviour
     private void Firing()
     {
         if (Input.GetMouseButtonDown(0))
-        {
+        {            
             if (side == RotatedSide.left)
             {
                 FireHandler.FireBullet(transform.position + new Vector3(-1f, 0, 0), -bulletSpeed);

@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Pistol attack
+  m_Name: pistol attack
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,13 +20,11 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 2007636881, guid: e483cf4acce00df47aac0e6ead52c55f, type: 3}
+      value: {fileID: 1329289805, guid: 17d6c9d7fd3e94e42b6c2a675c6cca6f, type: 3}
     - time: 0.083333336
-      value: {fileID: -946300518, guid: e483cf4acce00df47aac0e6ead52c55f, type: 3}
+      value: {fileID: 613472303, guid: 17d6c9d7fd3e94e42b6c2a675c6cca6f, type: 3}
     - time: 0.16666667
-      value: {fileID: 1789516756, guid: e483cf4acce00df47aac0e6ead52c55f, type: 3}
-    - time: 0.25
-      value: {fileID: 1994730480, guid: e483cf4acce00df47aac0e6ead52c55f, type: 3}
+      value: {fileID: 1674536030, guid: 17d6c9d7fd3e94e42b6c2a675c6cca6f, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -46,16 +44,15 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 2007636881, guid: e483cf4acce00df47aac0e6ead52c55f, type: 3}
-    - {fileID: -946300518, guid: e483cf4acce00df47aac0e6ead52c55f, type: 3}
-    - {fileID: 1789516756, guid: e483cf4acce00df47aac0e6ead52c55f, type: 3}
-    - {fileID: 1994730480, guid: e483cf4acce00df47aac0e6ead52c55f, type: 3}
+    - {fileID: 1329289805, guid: 17d6c9d7fd3e94e42b6c2a675c6cca6f, type: 3}
+    - {fileID: 613472303, guid: 17d6c9d7fd3e94e42b6c2a675c6cca6f, type: 3}
+    - {fileID: 1674536030, guid: 17d6c9d7fd3e94e42b6c2a675c6cca6f, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.33333334
+    m_StopTime: 0.25
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

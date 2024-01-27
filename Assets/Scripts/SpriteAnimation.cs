@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpriteAnimation : MonoBehaviour
 {
-    private Animator anim;
+    private static Animator anim;
     void Awake()
     {
         anim = GetComponent<Animator>();
@@ -33,6 +33,11 @@ public class SpriteAnimation : MonoBehaviour
     }
 
 
+    public static void FireTrigger()
+    {
+        anim.SetTrigger("fireTrigger");
+        print("inside");
+    }
 
     void Update()
     {
