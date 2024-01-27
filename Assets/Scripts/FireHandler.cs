@@ -7,7 +7,6 @@ public class FireHandler : MonoBehaviour
     private static float timer = 0;
     private static float timerMag = 0;
     public static float shootRate = 0.5f;
-
     public static int magSize = 7;
     public static int currentMag = 7;
     private float reloadRate = 2;
@@ -21,6 +20,15 @@ public class FireHandler : MonoBehaviour
         currentMag--;
         bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(speed, 0f);
         Destroy(bullet, 2f);
+    }
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+
+        }
     }
 
 

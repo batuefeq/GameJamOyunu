@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     public RotatedSide side; // hangi tarafa bakýyor karakter
 
     public static Player playerInstance;
+    private float pushForce = 100f;
 
     private void Awake()
     {
@@ -51,13 +52,18 @@ public class Player : MonoBehaviour
     {
         if (col.collider.gameObject.CompareTag("HeadCollider"))
         {
-            print("inside");
+            col.gameObject.GetComponent<Enemy>().health -= damage;
         }
         else if (col.collider.gameObject.CompareTag("Enemy"))
         {
             health -= col.gameObject.GetComponent<Enemy>().damage;
+            Vector2 pushDirection = (col.transform.position - transform.position).normalized;
+            pushDirection.y = 0;
+            print(pushDirection);
+            rb.AddForce(pushDirection * pushForce, ForceMode2D.Impulse);
         }
     }
+
 
     private void OnCollisionStay2D(Collision2D collision)
     {
