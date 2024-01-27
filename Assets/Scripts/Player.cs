@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     public static bool isGrounded;
 
-    private float ySpeedConstraint = 15f;
+    private float ySpeedConstraint = 10f;
 
 
     public enum RotatedSide
