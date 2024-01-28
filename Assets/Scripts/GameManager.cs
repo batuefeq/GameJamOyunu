@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameObject bullet1, bullet2, bullet3, walker, chaser, flier, jumper, parryObject, projectile, blowParticle,echo;
+    public static GameObject bullet1, bullet2, bullet3, walker, chaser, flier, jumper, parryObject, projectile, blowParticle,echo, health;
 
     public static List<GameObject> enemyList = new();
 
@@ -13,12 +13,17 @@ public class GameManager : MonoBehaviour
 
 
     [SerializeField]
-    private GameObject _bullet1, _bullet2, _bullet3, _walker, _chaser, _flier, _jumper, _parryObject, _projectile, _blowParticle, _echo;
+    private GameObject _bullet1, _bullet2, _bullet3, _walker, _chaser, _flier, _jumper, _parryObject, _projectile, _blowParticle, _echo, _health;
 
-
+    public static GameManager instance;
 
     private void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        health = _health;
         echo = _echo;
         blowParticle = _blowParticle;
         projectile = _projectile;
@@ -40,6 +45,17 @@ public class GameManager : MonoBehaviour
         bullets.Add(bullet1);
         bullets.Add(bullet2);
         bullets.Add(bullet3);
+    }
+
+
+    public static void Restart()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Player.health = Player.maxHealth;
+            Player.playerInstance.gameObject.transform.position = new Vector3(0, 0, 0);
+        }
+        
     }
 
 }

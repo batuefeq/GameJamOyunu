@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public int damage = 2;
+    public int damage = 1;
     public int health;
     private Rigidbody2D rb;
     private float moveSpeed = 5f;
@@ -114,6 +114,8 @@ public class Enemy : MonoBehaviour
     private void OnDestroy()
     {
         Instantiate(GameManager.blowParticle, transform.position, Quaternion.identity);
+        var obj = Instantiate(GameManager.health, transform.position, Quaternion.identity);
+        Destroy(obj, 2f);
     }
 
     private void Jump()

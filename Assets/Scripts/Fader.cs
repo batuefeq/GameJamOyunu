@@ -7,11 +7,6 @@ public class Fader : MonoBehaviour
     float ir = 1;
     private float fast = 2f;
 
-    void Start()
-    {
-        
-    }
-
 
     private void Fade()
     {

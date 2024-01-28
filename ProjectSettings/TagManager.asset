@@ -12,6 +12,10 @@ TagManager:
   - JumperEnemy
   - ChaserEnemy
   - Projectile
+  - CanvasGroup
+  - Dialogue
+  - Name
+  - Health
   layers:
   - Default
   - TransparentFX

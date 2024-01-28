@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public static int health;
+    public static int maxHealth = 10;
     public static int damage;
     public static float speed;
     public static float jumpSpeed;
@@ -43,7 +44,7 @@ public class Player : MonoBehaviour
             playerInstance = this;
         }
         rb = GetComponent<Rigidbody2D>();
-        health = 5;
+        health = 10;
         damage = 1;
         speed = 10f;
         jumpSpeed = 10f;
@@ -70,6 +71,15 @@ public class Player : MonoBehaviour
         else
         {
             timebtwSpawn -= Time.deltaTime;
+        }
+    }
+
+
+    private void Health()
+    {
+        if (health <= 0)
+        {
+            GameManager.Restart();
         }
     }
 
@@ -115,6 +125,15 @@ public class Player : MonoBehaviour
         }
     }
 
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Health"))
+        {
+            health++;
+            Destroy(collision.gameObject);
+        }
+    }
 
     private void PlayerRotater(float input)
     {
@@ -166,6 +185,13 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (GameManager.instance == null)
+        {
+            Movement();
+            Jump();
+            return;
+        }
+
         print("Player health: " + health.ToString());
         ConstraintLooker();
         Movement();
@@ -175,5 +201,6 @@ public class Player : MonoBehaviour
         {
             Echo();
         }
+        Health();
     }
 }

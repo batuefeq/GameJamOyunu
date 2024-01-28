@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
+using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -11,7 +10,14 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> sentences;
     void Start()
     {
+        Find();
         sentences = new Queue<string>();
+    }
+
+
+    private void Update()
+    {
+        Find();
     }
 
     public void StartDialogue(Dialogue dialogue)
@@ -47,6 +53,23 @@ public class DialogueManager : MonoBehaviour
         {
             dialogueText.text += letter;
             yield return null;
+        }
+    }
+
+
+    private void Find()
+    {
+        if (nameText == null)
+        {
+            var obj = GameObject.FindWithTag("Name");
+            nameText = obj.GetComponent<TextMeshProUGUI>();
+
+
+        }
+        if (dialogueText == null)
+        {
+            var ef = GameObject.FindWithTag("Dialogue");
+            dialogueText = ef.GetComponent<TextMeshProUGUI>();
         }
     }
 
