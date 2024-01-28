@@ -8,10 +8,15 @@ public class EnemySpawner : MonoBehaviour
 {
     private float spawnRate = 2f;
     private float time = 0f;
+    private float projectileSpawnRate = 2f;
+    private float proTime = 0f;
     public static EnemySpawner enemySpawner;
 
-    public GameObject spawnLocationR, spawnLocationL;
+    public static List<GameObject> enemyList = new();
+
+    public GameObject spawnLocationR, spawnLocationL, proSpawnL, proSpawnR;
     List<Vector3> locationLists = new();
+    List<Vector3> locationListProj = new();
 
     void Awake()
     {
@@ -22,6 +27,8 @@ public class EnemySpawner : MonoBehaviour
 
         locationLists.Add(spawnLocationL.transform.position);
         locationLists.Add(spawnLocationR.transform.position);
+        locationListProj.Add(proSpawnL.transform.position);
+        locationListProj.Add(proSpawnR.transform.position);
     }
 
 
@@ -34,21 +41,35 @@ public class EnemySpawner : MonoBehaviour
             time = 0f;
         }
     }
+    
+    private void ProjectileTimer()
+    {
+        proTime += Time.deltaTime;
+        if (proTime >= projectileSpawnRate)
+        {
+            ProjectileSpawner();
+            proTime = 0f;
+        }
+    }
+
+    private void ProjectileSpawner()
+    {
+        int rand = Random.Range(0, 2);
+        Instantiate(GameManager.projectile, locationListProj[rand], Quaternion.identity);
+    }
 
     private void Spawn()
     {
         int rand = Random.Range(0, 2);
         int randomEnemy = Random.Range(0, GameManager.enemyList.Count);
 
-        Instantiate(GameManager.enemyList[randomEnemy], locationLists[rand], Quaternion.identity);
+        var obj=  Instantiate(GameManager.enemyList[randomEnemy], locationLists[rand], Quaternion.identity);
+        enemyList.Add(obj);
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            Spawn();
-        }
-        Spawner();
+        ProjectileTimer();
+        //Spawner();
     }
 }

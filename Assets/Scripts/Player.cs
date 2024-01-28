@@ -34,6 +34,7 @@ public class Player : MonoBehaviour
 
     public static Player playerInstance;
     private float pushForce = 100f;
+    private int projectileDamage = 1;
 
     private void Awake()
     {
@@ -70,6 +71,11 @@ public class Player : MonoBehaviour
             pushDirection.y = 0;
             print(pushDirection);
             rb.AddForce(pushDirection * pushForce, ForceMode2D.Impulse);
+        }
+        else if (col.collider.gameObject.CompareTag("Projectile"))
+        {
+            Destroy(col.gameObject);
+            health -= projectileDamage;
         }
     }
 
