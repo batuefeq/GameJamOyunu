@@ -11,6 +11,7 @@ public class Collider : MonoBehaviour
         if (collision.gameObject.GetComponent<Enemy>())
         {
             collision.gameObject.GetComponent<Enemy>().health -= damage;
+            collision.gameObject.GetComponentInChildren<BodyRedder>().time = collision.gameObject.GetComponentInChildren<BodyRedder>().timeRate;
             Destroy(gameObject);
         }  
     }

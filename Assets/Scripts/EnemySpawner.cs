@@ -14,6 +14,18 @@ public class EnemySpawner : MonoBehaviour
 
     public static List<GameObject> enemyList = new();
 
+
+    public List<GameObject> list1 = new();
+    public List<GameObject> list2 = new();
+    public List<GameObject> list3 = new();
+    public List<GameObject> list4 = new();
+    public List<GameObject> list5 = new();
+    public List<GameObject> list6 = new();
+    public List<GameObject> list7 = new();
+
+
+    public List<List<GameObject>> allLists = new();
+
     public GameObject spawnLocationR, spawnLocationL, proSpawnL, proSpawnR;
     List<Vector3> locationLists = new();
     List<Vector3> locationListProj = new();
@@ -58,12 +70,15 @@ public class EnemySpawner : MonoBehaviour
         Instantiate(GameManager.projectile, locationListProj[rand], Quaternion.identity);
     }
 
+
+
+
     private void Spawn()
     {
         int rand = Random.Range(0, 2);
-        int randomEnemy = Random.Range(0, GameManager.enemyList.Count);
 
-        var obj=  Instantiate(GameManager.enemyList[randomEnemy], locationLists[rand], Quaternion.identity);
+        var obj=  Instantiate(allLists[WaveHandler.WaveNumber][0], locationLists[rand], Quaternion.identity);
+        allLists[WaveHandler.WaveNumber].RemoveAt(0);
         enemyList.Add(obj);
     }
 

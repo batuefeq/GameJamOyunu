@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1408721702110977079}
   - component: {fileID: 1408721702110977076}
   - component: {fileID: 5859011344549608991}
+  - component: {fileID: 4830149497271676446}
   m_Layer: 0
   m_Name: EnemyBody
   m_TagString: FlyingEnemy
@@ -106,6 +107,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4830149497271676446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408721702110977078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b23cf990793070243823ac3fc4a146b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1408721702646388138
 GameObject:
   m_ObjectHideFlags: 0

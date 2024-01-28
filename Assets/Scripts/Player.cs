@@ -89,6 +89,7 @@ public class Player : MonoBehaviour
         if (col.collider.gameObject.CompareTag("HeadCollider"))
         {
             col.gameObject.GetComponent<Enemy>().health -= damage;
+            col.gameObject.GetComponentInChildren<BodyRedder>().time = col.gameObject.GetComponentInChildren<BodyRedder>().timeRate;
         }
         else if (col.collider.gameObject.CompareTag("Enemy"))
         {
@@ -189,7 +190,7 @@ public class Player : MonoBehaviour
         {
             if (GameManager.instance.state == GameManager.State.talking)
             {
-                return;
+               
             }
         }
         if (GameManager.instance == null)

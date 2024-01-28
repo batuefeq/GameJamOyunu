@@ -10,6 +10,8 @@ public class WaveHandler : MonoBehaviour
 
     public Dialogue dialogue;
 
+
+
     public void TriggerDialogue()
     {
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
@@ -19,6 +21,9 @@ public class WaveHandler : MonoBehaviour
     {
         
     }
+
+
+
 
     private void Dialogue()
     {
