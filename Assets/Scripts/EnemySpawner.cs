@@ -70,6 +70,6 @@ public class EnemySpawner : MonoBehaviour
     void Update()
     {
         ProjectileTimer();
-        //Spawner();
+        Spawner();
     }
 }

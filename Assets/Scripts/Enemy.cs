@@ -110,6 +110,12 @@ public class Enemy : MonoBehaviour
         }
     }
 
+
+    private void OnDestroy()
+    {
+        Instantiate(GameManager.blowParticle, transform.position, Quaternion.identity);
+    }
+
     private void Jump()
     {
         rb.velocity = new Vector2((Player.playerInstance.gameObject.transform.position - transform.position).normalized.x * xSpeed, jumpSpeed);

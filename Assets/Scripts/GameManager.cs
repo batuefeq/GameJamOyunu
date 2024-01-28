@@ -4,20 +4,23 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameObject bullet1, bullet2, bullet3, walker, chaser, flier, jumper, parryObject, projectile;
+    public static GameObject bullet1, bullet2, bullet3, walker, chaser, flier, jumper, parryObject, projectile, blowParticle,echo;
 
     public static List<GameObject> enemyList = new();
 
     public static List<GameObject> bullets = new();
-    
+
+
 
     [SerializeField]
-    private GameObject _bullet1, _bullet2, _bullet3, _walker, _chaser, _flier, _jumper, _parryObject, _projectile;
+    private GameObject _bullet1, _bullet2, _bullet3, _walker, _chaser, _flier, _jumper, _parryObject, _projectile, _blowParticle, _echo;
 
 
 
     private void Awake()
     {
+        echo = _echo;
+        blowParticle = _blowParticle;
         projectile = _projectile;
         parryObject = _parryObject;
         bullet1 = _bullet1;

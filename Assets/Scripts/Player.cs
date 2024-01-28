@@ -57,7 +57,23 @@ public class Player : MonoBehaviour
         rb.velocity = new Vector2(x_input * speed, rb.velocity.y);
     }
 
-    
+    private static float timebtwSpawn = 0.1f;
+    private static float startTimebtwSpawns = 0.1f;
+
+    public static void Echo()
+    {
+        if (timebtwSpawn <= 0)
+        {
+            var obj = Instantiate(GameManager.echo, playerInstance.transform.position, Quaternion.identity);
+            timebtwSpawn = startTimebtwSpawns;
+        }
+        else
+        {
+            timebtwSpawn -= Time.deltaTime;
+        }
+    }
+
+
     private void OnCollisionEnter2D(Collision2D col)
     {
         if (col.collider.gameObject.CompareTag("HeadCollider"))
@@ -155,5 +171,9 @@ public class Player : MonoBehaviour
         Movement();
         Jump();
         Firing();
+        if (DeerCall.isJetpackActive)
+        {
+            Echo();
+        }
     }
 }

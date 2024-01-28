@@ -18,7 +18,7 @@ public class DeerCall : MonoBehaviour
         if (Input.GetKey(KeyCode.E) && !isJetpackActive && jetpackDuration > 0.2f)
         {
             isJetpackActive = true;
-            timeTaker = 1f;
+            Player.Echo();
         }
         if (Input.GetKeyUp(KeyCode.E))
         {
