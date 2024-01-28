@@ -220,7 +220,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 859266346666204451, guid: 415595b6bac92fd4194d458f6f3280cd, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 859266346789789539, guid: 415595b6bac92fd4194d458f6f3280cd, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1232,6 +1232,7 @@ GameObject:
   - component: {fileID: 1046329135}
   - component: {fileID: 1046329136}
   - component: {fileID: 1046329137}
+  - component: {fileID: 1046329138}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1266,6 +1267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 259f10699f7d64443be34ad31fdbd77f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
   _bullet1: {fileID: 2609117192186867984, guid: e5b908fc2c12ee2498b7b9b750fd1c85, type: 3}
   _bullet2: {fileID: 5694548620598233051, guid: 8464ecf325f55814b85a71239acd5581, type: 3}
   _bullet3: {fileID: 7581555546009162728, guid: 60940e500a478774884b498b543cb52e, type: 3}
@@ -1294,6 +1296,22 @@ MonoBehaviour:
   spawnLocationL: {fileID: 1473220082}
   proSpawnL: {fileID: 1154348227}
   proSpawnR: {fileID: 514461440}
+--- !u!114 &1046329138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1046329134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b74162de3a6282148895b846f297c5d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allCanvases: []
+  dialogue:
+    name: 
+    sentences: []
 --- !u!1 &1065108332
 GameObject:
   m_ObjectHideFlags: 0

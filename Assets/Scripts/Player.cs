@@ -185,6 +185,13 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (GameManager.instance != null)
+        {
+            if (GameManager.instance.state == GameManager.State.talking)
+            {
+                return;
+            }
+        }
         if (GameManager.instance == null)
         {
             Movement();
@@ -192,6 +199,7 @@ public class Player : MonoBehaviour
             return;
         }
 
+        
         print("Player health: " + health.ToString());
         ConstraintLooker();
         Movement();

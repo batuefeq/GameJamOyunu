@@ -11,6 +11,13 @@ public class GameManager : MonoBehaviour
     public static List<GameObject> bullets = new();
 
 
+    public enum State
+    {
+        talking,
+        playing
+    }
+
+    public State state;
 
     [SerializeField]
     private GameObject _bullet1, _bullet2, _bullet3, _walker, _chaser, _flier, _jumper, _parryObject, _projectile, _blowParticle, _echo, _health;
