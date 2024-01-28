@@ -1310,8 +1310,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allCanvases: []
   dialogue:
-    name: 
-    sentences: []
+    name: anan
+    sentences:
+    - sdfsdg
+    - sdfsdgsdfsdgsdfsdg
+    - sdfsdgsdfsdgsdfsdgsdfsdgsdfsdgsdfsdg
+    - sdfsdgsdfsdgsdfsdgsdfsdgsdfsdgsdfsdg
 --- !u!1 &1065108332
 GameObject:
   m_ObjectHideFlags: 0

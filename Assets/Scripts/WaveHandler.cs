@@ -15,19 +15,18 @@ public class WaveHandler : MonoBehaviour
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
     }
 
-    void Awake()
+    void Start()
     {
-        TriggerDialogue();
+        
     }
 
     private void Dialogue()
     {
-        
-    }
 
+    }
 
     void Update()
     {
-        
+        TriggerDialogue();
     }
 }

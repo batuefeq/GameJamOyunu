@@ -8,17 +8,20 @@ public class DialogueManager : MonoBehaviour
     public TMP_Text nameText;
     public TMP_Text dialogueText;
     private Queue<string> sentences;
-    void Start()
+
+    void Awake()
     {
-        Find();
         sentences = new Queue<string>();
+        Find();
     }
 
 
     private void Update()
     {
-        Find();
+
+        DisplayNextSentence();
     }
+
 
     public void StartDialogue(Dialogue dialogue)
     {
@@ -33,17 +36,21 @@ public class DialogueManager : MonoBehaviour
         DisplayNextSentence();
     }
 
+
     public void DisplayNextSentence()
     {
-        if (sentences.Count == 0)
+        if (Input.GetMouseButtonDown(0))
         {
-            EndDialogue();
-            return;
-        }
+            if (sentences.Count == 0)
+            {
+                EndDialogue();
+                return;
+            }
 
-        string sentence = sentences.Dequeue();
-        StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
+            string sentence = sentences.Dequeue();
+            StopAllCoroutines();
+            StartCoroutine(TypeSentence(sentence));
+        } 
     }
 
     IEnumerator TypeSentence(string sentence)
