@@ -32,6 +32,13 @@ public class EnemySpawner : MonoBehaviour
 
     void Awake()
     {
+        allLists.Add(list1);
+        allLists.Add(list2);
+        allLists.Add(list3);
+        allLists.Add(list4);
+        allLists.Add(list5);
+        allLists.Add(list6);
+        allLists.Add(list7);
         if (enemySpawner == null)
         {
             enemySpawner = this;
@@ -66,8 +73,11 @@ public class EnemySpawner : MonoBehaviour
 
     private void ProjectileSpawner()
     {
-        int rand = Random.Range(0, 2);
-        Instantiate(GameManager.projectile, locationListProj[rand], Quaternion.identity);
+        if (GameManager.instance.state == GameManager.State.playing)
+        {
+            int rand = Random.Range(0, 2);
+            Instantiate(GameManager.projectile, locationListProj[rand], Quaternion.identity);
+        }
     }
 
 
@@ -76,10 +86,16 @@ public class EnemySpawner : MonoBehaviour
     private void Spawn()
     {
         int rand = Random.Range(0, 2);
+        if (GameManager.instance.state == GameManager.State.playing)
+        {
+            if (allLists[WaveHandler.WaveNumber].Count > 0)
+            {
+                var obj = Instantiate(allLists[WaveHandler.WaveNumber][0], locationLists[rand], Quaternion.identity);
+                allLists[WaveHandler.WaveNumber].RemoveAt(0);
+                enemyList.Add(obj);
+            }
 
-        var obj=  Instantiate(allLists[WaveHandler.WaveNumber][0], locationLists[rand], Quaternion.identity);
-        allLists[WaveHandler.WaveNumber].RemoveAt(0);
-        enemyList.Add(obj);
+        }
     }
 
     void Update()

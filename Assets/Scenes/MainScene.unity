@@ -1359,8 +1359,6 @@ MonoBehaviour:
   - {fileID: 7693116606921501552, guid: bc535f372085a5647aac3e09da49998e, type: 3}
   list6: []
   list7: []
-  list8: []
-  list9: []
   spawnLocationR: {fileID: 752541416}
   spawnLocationL: {fileID: 1473220082}
   proSpawnL: {fileID: 1154348227}
@@ -1381,10 +1379,12 @@ MonoBehaviour:
   dialogue:
     name: anan
     sentences:
-    - sdfsdg
-    - sdfsdgsdfsdgsdfsdg
+    - "Batu: Selam can\u0131m?"
+    - "\u015Eeytan:  Buraya ne i\xE7in geldi\u011Fini biliyor musun?"
+    - "Batu: Bilmiyorsun san\u0131r\u0131m."
     - sdfsdgsdfsdgsdfsdgsdfsdgsdfsdgsdfsdg
-    - sdfsdgsdfsdgsdfsdgsdfsdgsdfsdgsdfsdg
+  canvas: {fileID: 2074836006}
+  dialoguemanager: {fileID: 1775381475}
 --- !u!1 &1065108332
 GameObject:
   m_ObjectHideFlags: 0
@@ -2077,6 +2077,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1775381475 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1605068309844091507, guid: 867e45a7f2615ba46a5d2b1c3a15e026, type: 3}
+  m_PrefabInstance: {fileID: 1187968288}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12472180e36c197498253f47782b51d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1865253139
 GameObject:
   m_ObjectHideFlags: 0

@@ -190,7 +190,7 @@ public class Player : MonoBehaviour
         {
             if (GameManager.instance.state == GameManager.State.talking)
             {
-               
+                return;
             }
         }
         if (GameManager.instance == null)

@@ -7,19 +7,16 @@ public class DialogueManager : MonoBehaviour
 {
     public TMP_Text nameText;
     public TMP_Text dialogueText;
-    private Queue<string> sentences;
-
-    void Awake()
-    {
-        sentences = new Queue<string>();
-        Find();
-    }
+    private Queue<string> sentences = new();
 
 
     private void Update()
     {
-
-        DisplayNextSentence();
+        Find();
+        if (Input.GetMouseButtonDown(0))
+        {
+            DisplayNextSentence();
+        }
     }
 
 
@@ -32,25 +29,22 @@ public class DialogueManager : MonoBehaviour
         {
             sentences.Enqueue(sentence);
         }
-
         DisplayNextSentence();
     }
 
 
     public void DisplayNextSentence()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (sentences.Count == 0)
-            {
-                EndDialogue();
-                return;
-            }
 
-            string sentence = sentences.Dequeue();
-            StopAllCoroutines();
-            StartCoroutine(TypeSentence(sentence));
-        } 
+        if (sentences.Count == 0)
+        {
+            EndDialogue();
+            return;
+        }
+        string sentence = sentences.Dequeue();
+        StopAllCoroutines();
+        StartCoroutine(TypeSentence(sentence));
+
     }
 
     IEnumerator TypeSentence(string sentence)
@@ -64,25 +58,31 @@ public class DialogueManager : MonoBehaviour
     }
 
 
-    private void Find()
+    public void Find()
     {
         if (nameText == null)
         {
             var obj = GameObject.FindWithTag("Name");
-            nameText = obj.GetComponent<TextMeshProUGUI>();
-
+            if (obj != null)
+            {
+                nameText = obj.GetComponent<TextMeshProUGUI>();
+            }
 
         }
         if (dialogueText == null)
         {
             var ef = GameObject.FindWithTag("Dialogue");
-            dialogueText = ef.GetComponent<TextMeshProUGUI>();
+            if (ef != null)
+            {
+                dialogueText = ef.GetComponent<TextMeshProUGUI>();
+            }
         }
     }
 
+
     void EndDialogue()
     {
-        Debug.Log("End of conv");
+        GameManager.instance.state = GameManager.State.playing;
+        WaveHandler.startOfWave = true;
     }
-
 }

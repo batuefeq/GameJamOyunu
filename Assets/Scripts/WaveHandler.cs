@@ -10,28 +10,35 @@ public class WaveHandler : MonoBehaviour
 
     public Dialogue dialogue;
 
-
+    public static bool endOfWave = true;
+    public GameObject canvas;
+    public DialogueManager dialoguemanager;
+    public static bool startOfWave = false;
 
     public void TriggerDialogue()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+        dialoguemanager.Find();
+        dialoguemanager.StartDialogue(dialogue);
     }
 
-    void Start()
+    private void WaveStarter()
     {
-        
+        if (startOfWave)
+        {
+            startOfWave = false;
+            canvas.transform.GetChild(0).gameObject.SetActive(false);
+        }
     }
 
-
-
-
-    private void Dialogue()
-    {
-
-    }
 
     void Update()
     {
-        TriggerDialogue();
+        WaveStarter();
+        if (endOfWave)
+        {
+            canvas.transform.GetChild(0).gameObject.SetActive(true);
+            TriggerDialogue();
+            endOfWave = false;
+        }
     }
 }

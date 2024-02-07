@@ -113,6 +113,7 @@ public class Enemy : MonoBehaviour
 
     private void OnDestroy()
     {
+        if (!this.gameObject.scene.isLoaded) return;
         Instantiate(GameManager.blowParticle, transform.position, Quaternion.identity);
         var obj = Instantiate(GameManager.health, transform.position, Quaternion.identity);
         Destroy(obj, 2f);
